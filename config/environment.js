@@ -4,6 +4,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'study-hall',
+    podModulePrefix: 'study-hall/ui',
     environment,
     rootURL: '/',
     locationType: 'auto',

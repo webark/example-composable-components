@@ -1,0 +1,41 @@
+{{#list-view tagName="ul" items=frameworks as |view|}}
+
+  {{#view.list-item tagName="li" as |listItem|}}
+
+    {{#listItem.item-header tagName="strong" as |item|}}
+      {{item.name}}
+    {{/listItem.item-header}}
+
+    {{#listItem.item-body tagName="p" as |item|}}
+      {{item.description}}
+    {{/listItem.item-body}}
+
+    {{#listItem.item-actions tagName="span" as |item|}}
+      <a href="{{item.link.url}}">{{item.link.text}}</a>
+    {{/listItem.item-actions}}
+
+    {{#list-view tagName="ul" items=listItem.item.subFrameworks as |subView|}}
+
+      {{#subView.list-item tagName="li" as |listItem|}}
+
+        {{#listItem.item-header tagName="strong" as |item|}}
+          {{item.name}}
+        {{/listItem.item-header}}
+
+        {{#listItem.item-body tagName="p" as |item|}}
+          {{item.description}}
+        {{/listItem.item-body}}
+
+        {{#listItem.item-actions tagName="span" as |item|}}
+          <a href="{{item.link.url}}">{{item.link.text}}</a>
+        {{/listItem.item-actions}}
+
+      {{/subView.list-item}}
+
+    {{/list-view}}
+
+  {{/view.list-item}}
+
+{{/list-view}}
+
+{{outlet}}

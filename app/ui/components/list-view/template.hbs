@@ -1,0 +1,6 @@
+{{#each items as |item|}}
+  {{yield (hash
+    list-item=(component "list-view/list-item" item=item)
+    item=item
+  )}}
+{{/each}}
